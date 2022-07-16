@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head  th:include="fragments/header :: header" >
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<title>Student Management</title>
+</head>
+<body>
+<header class="header" th:include="fragments/menu :: menu" />
+<div class="container">
+<!-- create a spring form where user can enter data-->
+<h3 alidgn="center">Add Student</h3>
+<!--ModelAttribute : students-->
+
+
+<form action="#" th:action="@{/save-student}" th:object="${student}" 	method="post" role="form" class="form">
+
+<input type="text" th:field="*{id}" class="form-control hidden"placeholder="id">
+<div class="form-group" th:classappend="${#fields.hasErrors('name')} ? 'error'">
+
+<label>Name : </label>
+<input type="text" th:field="*{name}" class="form-control"placeholder="Name">
+<!-- Validation errors -->
+<p th:if="${#fields.hasErrors('name')}" class="label label-danger" th:errors="*{name}">Error</p>
+</div>
+<div class="form-group" th:classappend="${#fields.hasErrors('mobile')} ? 'error'">
+<label>Mobile : </label>
+<input type="text" th:field="*{mobile}" class="form-control"placeholder="Mobile No">
+<p th:if="${#fields.hasErrors('mobile')}" class="label label-danger" th:errors="*{mobile}">Error</p>
+</div>
+<div class="form-group" th:classappend="${#fields.hasErrors('idno')} ? 'error'">
+<label>Id No : </label>
+<input type="text" th:field="*{idno}" class="form-control"placeholder="Id No">
+<p th:if="${#fields.hasErrors('idno')}" class="label label-danger" th:errors="*{idno}">Error</p>
+</div>
+<div class="form-group" th:classappend="${#fields.hasErrors('country')} ? 'error'">
+<label>Country : </label>
+<input type="text" th:field="*{country}" class="form-control"placeholder="Country">
+<p th:if="${#fields.hasErrors('country')}" class="label label-danger" th:errors="*{country}">Error</p>
+</div>
+
+
+<input type="submit" class="btn btn-sm btn-primary" value="Submit">
+<input type="reset" class="btn btn-sm btn-info" value="Reset"> 
+<br/>
+</form>
+
+</div>
+<footer>
+		<div th:include="fragments/scripts :: general" />
+	</footer>
+</body>
+</html>

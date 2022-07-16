@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="fragments/header :: header" />
+<body>
+<header class="header" th:include="fragments/menu :: menu" />
+
+   <section id="main-section" class="container-fluid">
+      <header class="page-header">
+         <h1>Error <span th:remove="tag"
+                  th:text="${code}">code</span></h1>
+      </header>
+      <p><span th:remove="tag"
+                  th:text="${message}">Exception message</span></p>
+                  <button class="btn btn-dark"  onclick="history.back()">Go Back</button>
+   </section>
+<footer>
+		<div th:include="fragments/scripts :: general" />
+	</footer>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+ <head th:include="fragments/header :: header">
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+<!-- jQuery library -->
+<!--  Load local css-->
+<link rel="stylesheet" type="text/css" href="/student-management/URLToReachResourcesFolder/css/my-style-sheet.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<title>Student Management</title>
+</head>
+<body>
+<header class="header" th:include="fragments/menu :: menu" /> 
+<!--  <h1 align="center"> Joe Technologies</h1>-->
+<!--ModelAttribute : students-->
+<div class="container">
+     <form action="/showAddStudentPage">
+<input class="btn btn-info" value="ADD" type="submit">
+</form>
+
+<table class="table table-striped">
+<tr>
+<th>Id</th>
+<th>Name</th>
+<th>Mobile</th>
+<th>Id No</th>
+<th>Country</th>
+<th>Action</th>
+
+</tr>
+<tr th:each="student : ${students}">
+<td><span th:remove="tag" th:text="${student?.id}"></span></td>
+<td><span th:remove="tag" th:text="${student?.name}"></span></td>
+<td><span th:remove="tag" th:text="${student?.mobile}"></span></td>
+<td><span th:remove="tag" th:text="${student?.idno}"></span></td>
+<td><span th:remove="tag" th:text="${student?.country}"></span></td>
+<td>
+<a  th:href="@{updateStudent?userId=} + ${student?.id}"><i class="fa fa-pencil-square-o" aria-hidden="true" style="color:green"></i></a>
+<a th:href="@{deleteStudent?userId=} + ${student?.id}" onclick="return confirm('Are you sure you want to delete this student?');"><i class="fa fa-trash-o" aria-hidden="true"  style="color:red"></i></a>
+</td>
+</tr>
+
+
+
+
+</table>
+  <img alt="fake students photo" width="200px" height="200px" th:src="@{/static/images/student.jpg}">
+  <img alt="fake students photo" width="200px" height="200px" th:src="@{/static/images/student.jpg}">  
+    <img alt="fake students photo" width="200px" height="200px" th:src="@{/static/images/student.jpg}">
+  <img alt="fake students photo" width="200px" height="200px" th:src="@{/static/images/student.jpg}">
+    <img alt="fake students photo" width="200px" height="200px" th:src="@{/static/images/student.jpg}">
+    </div>
+  
+
+<footer>
+		<div th:include="fragments/scripts :: general" />
+	</footer>
+</body>
+</html>
