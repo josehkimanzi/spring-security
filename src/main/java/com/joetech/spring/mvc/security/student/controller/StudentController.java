@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -17,6 +18,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -32,7 +34,9 @@ import com.joetech.spring.mvc.security.api.Student;
 import com.joetech.spring.mvc.security.api.User;
 import com.joetech.spring.mvc.security.api.UserRole;
 import com.joetech.spring.mvc.security.student.service.StudentService;
+import com.joetech.spring.mvc.security.student.service.StudentServiceRefined;
 import com.joetech.spring.mvc.security.user.model.form.DefaultUserForm;
+import com.joetech.spring.mvc.security.user.model.persistence.PersistentStudent;
 import com.joetech.spring.mvc.security.validation.group.Creation;
 
 
@@ -42,6 +46,8 @@ public class StudentController{
 	private static final Logger LOGGER   = LoggerFactory.getLogger(StudentController.class);
 	@Autowired
 	private StudentService studentService;
+	@Autowired
+	private StudentServiceRefined studentServiceRefined;
 	@GetMapping("/showStudent")
 	public String showStudentList(Model model) {
 		// call the service to get the data
@@ -301,6 +307,94 @@ public class StudentController{
 		
 			
 			
+		}
+	
+	   @GetMapping(path = "/studentAdvanced")
+	    public String showStudentsList(final ModelMap model) {
+	        model.put("students", studentServiceRefined.getAllStudents());
+
+	        return "student/student-list";
+	    }
+	   @GetMapping(path = "/edit2/{id}")
+	    public String showStudentEdition(
+	            @PathVariable("id") final int id,
+	            @ModelAttribute("student") final Student student,
+	            final ModelMap model) {
+	        final PersistentStudent persistentStudent;
+
+	        persistentStudent = studentServiceRefined.getStudent(id);
+	        BeanUtils.copyProperties(persistentStudent, student);
+
+	        model.put("student", student);
+
+	        return "student/add-student";
+	    }
+	   @GetMapping(path = "/addStudentNew")
+	    public String addStudentNew(final ModelMap model) {
+		   Student student=new Student();
+	        model.put("student", student);
+
+	        return "student/add-student";
+	   }
+
+	    @PostMapping("/saveStudentNew")
+	    public String saveUser(final ModelMap model,
+	            @ModelAttribute("student") @Validated(Creation.class) final Student student,
+	            final BindingResult bindingResult,
+	            final HttpServletResponse response,RedirectAttributes attributes) {
+	        final String path;
+	        if(student.getId()== 0) {
+	
+	        if (bindingResult.hasErrors()) {
+	            // Invalid form data
+
+	            // Returns to the form view
+	            path = "student/add-student";
+
+	            // Marks the response as a bad request
+	            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+	            return path;
+	        } else {
+	        	studentServiceRefined.createStudent(student);
+	        	//StudentDAO.saveUser(form);
+	        	attributes.addFlashAttribute("success", "New User Recorded added Successfully With New Implementation");
+
+	        	 return "redirect:/studentAdvanced";
+	        }
+	    }
+	        else {
+
+		        if (bindingResult.hasErrors()) {
+		            // Invalid form data
+
+		            // Returns to the form view
+		            path = "student/add-student";
+
+		            // Marks the response as a bad request
+		            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+		            return path;
+		        } else {
+		        	studentServiceRefined.updateStudent(student);
+		        	//StudentDAO.saveUser(form);
+		        	attributes.addFlashAttribute("success", "New User Recorded Updated Successfully With New Implementation");
+
+		        	 return "redirect:/studentAdvanced";
+		        }
+	        	
+	        }
+	        
+	       // return path;
+
+	       
+	    }
+	    @GetMapping("/deleteStudentAdvanced")
+		public String deleteStudentAdvanced(@RequestParam("userId") int id,RedirectAttributes attributes) {
+			//capture the id of the student whom you are trying to delete
+			//once captured the id do a service call to dlete the student
+	    	studentServiceRefined.deleteStudent(id);
+			attributes.addFlashAttribute("success", "Student Record Deleted successfully using New Implementation");
+			return "redirect:/studentAdvanced";
+
 		}
 
 	

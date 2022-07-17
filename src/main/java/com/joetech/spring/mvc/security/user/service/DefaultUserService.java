@@ -39,8 +39,10 @@ import com.joetech.spring.mvc.security.user.model.User;
 import com.joetech.spring.mvc.security.user.model.form.UserForm;
 import com.joetech.spring.mvc.security.user.model.form.UserRolesForm;
 import com.joetech.spring.mvc.security.user.model.persistence.PersistentRole;
+import com.joetech.spring.mvc.security.user.model.persistence.PersistentStudent;
 import com.joetech.spring.mvc.security.user.model.persistence.PersistentUser;
 import com.joetech.spring.mvc.security.user.repository.PersistentRoleRepository;
+import com.joetech.spring.mvc.security.student.repository.PersistentStudentRepository;
 import com.joetech.spring.mvc.security.user.repository.PersistentUserRepository;
 
 /**
@@ -71,6 +73,8 @@ public final class DefaultUserService implements UserService {
      * Users repository.
      */
     private final PersistentUserRepository userRepository;
+    
+
 
     /**
      * Default constructor.
@@ -135,6 +139,7 @@ public final class DefaultUserService implements UserService {
     public final Iterable<? extends User> getAllUsers() {
         return userRepository.findAll();
     }
+    
 
     @Override
     @Cacheable("user")

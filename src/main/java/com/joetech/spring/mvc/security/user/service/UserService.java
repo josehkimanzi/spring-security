@@ -31,6 +31,7 @@ import com.joetech.spring.mvc.security.user.model.Role;
 import com.joetech.spring.mvc.security.user.model.User;
 import com.joetech.spring.mvc.security.user.model.form.UserForm;
 import com.joetech.spring.mvc.security.user.model.form.UserRolesForm;
+import com.joetech.spring.mvc.security.user.model.persistence.PersistentStudent;
 
 /**
  * Service for handling user data.
@@ -66,6 +67,9 @@ public interface UserService {
      */
     @PreAuthorize("hasAuthority('READ_USER')")
     public Iterable<? extends User> getAllUsers();
+    
+    
+    
 
     /**
      * Returns the user with the received username.

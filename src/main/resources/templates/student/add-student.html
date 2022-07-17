@@ -19,7 +19,8 @@
 <!--ModelAttribute : students-->
 
 
-<form action="#" th:action="@{/save-student}" th:object="${student}" 	method="post" role="form" class="form">
+<!-- <form action="#" th:action="@{/save-student}" th:object="${student}" 	method="post" role="form" class="form">-->
+<form action="#" th:action="@{/saveStudentNew}" th:object="${student}" 	method="post" role="form" class="form">
 
 <input type="text" th:field="*{id}" class="form-control hidden"placeholder="id">
 <div class="form-group" th:classappend="${#fields.hasErrors('name')} ? 'error'">

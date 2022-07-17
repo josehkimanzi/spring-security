@@ -29,6 +29,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.joetech.spring.mvc.security.user.repository.PersistentRoleRepository;
+import com.joetech.spring.mvc.security.student.repository.PersistentStudentRepository;
+import com.joetech.spring.mvc.security.student.service.StudentServiceRefined;
+import com.joetech.spring.mvc.security.student.service.StudentServiceRefinedImpl;
 import com.joetech.spring.mvc.security.user.repository.PersistentUserRepository;
 import com.joetech.spring.mvc.security.user.service.DefaultUserService;
 import com.joetech.spring.mvc.security.user.service.UserService;
@@ -50,7 +53,12 @@ public class ServiceConfig {
     public UserService getUserService(final PersistentUserRepository userRepo,
             final PersistentRoleRepository roleRepo,
             final PasswordEncoder passEncoder) {
-        return new DefaultUserService(userRepo, roleRepo, passEncoder);
+        return new DefaultUserService(userRepo,roleRepo, passEncoder);
+    }
+    @Bean("studentService")
+    public StudentServiceRefined getStudentService(final PersistentStudentRepository studentRepo
+           ) {
+        return new StudentServiceRefinedImpl(studentRepo);
     }
 
 }
