@@ -44,6 +44,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.joetech.spring.mvc.security.DAO.StudentDAO;
 import com.joetech.spring.mvc.security.api.Student;
@@ -163,7 +164,7 @@ public class UserController {
      * @return the next view to show
      */
    /* The following piece of code did not work, so the functionality was shifted
-    to Studentcontroller as /savej */
+    to Studentcontroller as /registeruser */
     @Autowired
 	private StudentDAO studentDAO;
 	@PostMapping("/savejj")
@@ -185,7 +186,7 @@ public class UserController {
     public String saveUser(final ModelMap model,
             @ModelAttribute(PARAM_USER_FORM) @Validated(Creation.class) final DefaultUserForm form,
             final BindingResult bindingResult,
-            final HttpServletResponse response) {
+            final HttpServletResponse response,RedirectAttributes attributes) {
         final String path;
 
         if (bindingResult.hasErrors()) {
@@ -202,8 +203,10 @@ public class UserController {
 
             path = showUsersList(model);
         }
+        attributes.addFlashAttribute("success", "New User Recorded added Successfully");
+       // return path;
 
-        return path;
+        return "redirect:/users";
     }
 
     /**
@@ -314,7 +317,7 @@ public class UserController {
     public String updateUser(final ModelMap model,
             @ModelAttribute(PARAM_USER_FORM) @Validated(Update.class) final DefaultUserForm form,
             final BindingResult bindingResult,
-            final HttpServletResponse response) {
+            final HttpServletResponse response,RedirectAttributes attributes) {
         final String path;
 
         if (bindingResult.hasErrors()) {
@@ -331,7 +334,9 @@ public class UserController {
             path = showUsersList(model);
         }
 
-        return path;
+      //  return path;
+        attributes.addFlashAttribute("success", "User ["+form.getUsername()+"] Updated successfully");
+        return "redirect:/users";
     }
 
     /**
@@ -351,7 +356,7 @@ public class UserController {
     public String updateUserRoles(final ModelMap model,
             @ModelAttribute(PARAM_ROLES_FORM) @Validated final DefaultUserRolesForm form,
             final BindingResult bindingResult,
-            final HttpServletResponse response) {
+            final HttpServletResponse response,RedirectAttributes attributes) {
         final String path;
 
         if (bindingResult.hasErrors()) {
@@ -367,8 +372,9 @@ public class UserController {
 
             path = showUsersList(model);
         }
-
-        return path;
+        attributes.addFlashAttribute("success", "User Roles for ["+form.getUsername()+"] Updated successfully");
+        return "redirect:/users";
+       // return path;
     }
 
 }

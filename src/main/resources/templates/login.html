@@ -9,6 +9,14 @@
 	<section id="main-section" class="container-fluid">
 		<header class="page-header">
 			<h1>Login</h1>
+		<!-- 	<div class="alert alert-danger" role="alert" th:if="${error}">
+ <button type="button" class="close" data-dismiss="alert">×</button>
+  	<center><span th:remove="tag" th:text="${error}">Error message</span></p></center>
+   </div>-->
+  <div class="alert alert-success" role="alert" th:if="${success}">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  	<center><span th:remove="tag" th:text="${success}">Success message</span></p></center>
+   </div>
 		</header>
 		<article class="well">
 	<!-- 	<img alt="fake students photo" width="200px" height="200px" th:src="@{/static/images/student.jpg}">-->

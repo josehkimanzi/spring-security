@@ -37,7 +37,7 @@ public class StudentAppConfig  implements WebMvcConfigurer  {
 		LOGGER.info("We are inside StudentAppConfig dataSource collecting DB credientials");
 		dataSource.setUsername("root");
 		dataSource.setPassword("root");
-		dataSource.setUrl("jdbc:mysql://localhost:3306/seleniumexpress?useSSL=false");
+		dataSource.setUrl("jdbc:mysql://localhost:3306/seleniumexpress?allowPublicKeyRetrieval=true&useSSL=false");
 		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
 		return dataSource;
 		

@@ -57,6 +57,7 @@ public class HomeController {
      */
     @GetMapping(produces = MediaType.TEXT_HTML_VALUE)
     public String showWelcome() {
+    	//return "redirect:/users";
         return VIEW_WELCOME;
     }
 

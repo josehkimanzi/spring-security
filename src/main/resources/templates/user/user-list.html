@@ -8,13 +8,21 @@
 
 	<section id="main-section" class="container-fluid">
 		<header class="page-header">
-			<h1>Users List</h1>
+			<h1>Users List [Custom]</h1>
 		</header>
+		<!--<div th:include="fragments/transaction-response :: div" />-->
+ <div class="alert alert-danger" role="alert" th:if="${error}">
+ <button type="button" class="close" data-dismiss="alert">×</button>
+  	<center><span th:remove="tag" th:text="${error}">Error message</span></p></center>
+   </div>
+  <div class="alert alert-success" role="alert" th:if="${success}">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  	<center><span th:remove="tag" th:text="${success}">Success message</span></p></center>
+   </div>
 		<table class="table table-striped display">
 			<thead>
 				<tr>
 					<th>Username</th>
-					<th>Roles</th>
                <th>Enabled</th>
                <th>Locked</th>
                <th>Expired</th>
@@ -25,11 +33,9 @@
 				<tr th:each="user : ${users}">
 					<td><span th:remove="tag" th:text="${user?.name}">name</span></td>
 				<!-- 	<td><span th:remove="tag" th:each="role, iterStat : ${user?.roles}" th:text="!${iterStat.last} ? ${role?.name} + ',': ${role?.name}">roles</span></td>-->
-					<td></td>
 					<td><span th:remove="tag" th:text="${user?.enabled}">enabled</span></td>
                <td><span th:remove="tag" th:text="${user?.locked}">locked</span></td>
                <td><span th:remove="tag" th:text="${user?.expired}">expired</span></td>
-               <td></td>
                <!-- <td><a class="btn btn-default" th:href="@{/users/roles/edit/} + ${user?.username}" role="button">Edit Roles</a></td>-->
                <td><a class="btn btn-default" th:href="@{/users/edit/} + ${user?.name}" role="button">Edit</a></td>
 				</tr>

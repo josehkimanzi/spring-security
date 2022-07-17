@@ -5,6 +5,9 @@ import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -19,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,9 +31,9 @@ import com.joetech.spring.mvc.security.api.RolePrivilege;
 import com.joetech.spring.mvc.security.api.Student;
 import com.joetech.spring.mvc.security.api.User;
 import com.joetech.spring.mvc.security.api.UserRole;
+import com.joetech.spring.mvc.security.student.service.StudentService;
 import com.joetech.spring.mvc.security.user.model.form.DefaultUserForm;
 import com.joetech.spring.mvc.security.validation.group.Creation;
-import com.joetech.spring.mvc.security.DAO.StudentDAO;
 
 
 @Controller
@@ -37,11 +41,11 @@ public class StudentController{
 	private final PasswordEncoder passwordEncoder= new BCryptPasswordEncoder();
 	private static final Logger LOGGER   = LoggerFactory.getLogger(StudentController.class);
 	@Autowired
-	private StudentDAO studentDAO;
+	private StudentService studentService;
 	@GetMapping("/showStudent")
 	public String showStudentList(Model model) {
 		// call the service to get the data
-		List<Student> studentList = studentDAO.loadStudents();
+		List<Student> studentList = studentService.loadStudents();
 
 		for (Student tempStudent : studentList) {
 			System.out.println(tempStudent);
@@ -55,17 +59,17 @@ public class StudentController{
 	@GetMapping("/showUser")
 	public String showUserList(Model model) {
 		// call the service to get the data
-		List<User> userList = studentDAO.loadUsers();
+		List<User> userList = studentService.loadUsers();
 
 		for (User tempUser : userList) {
 			System.out.println(tempUser);
-			List<UserRole> userRoleList= studentDAO.getUserRoles(tempUser.getId());
+			List<UserRole> userRoleList= studentService.getUserRoles(tempUser.getId());
 			for (UserRole tempUserRole : userRoleList) {
-			//	System.out.println(tempUser.getName()+ " : "+ tempUserRole + studentDAO.getRole(tempUserRole.getRole_id()));
+			//	System.out.println(tempUser.getName()+ " : "+ tempUserRole + studentService.getRole(tempUserRole.getRole_id()));
 				System.out.println(tempUser.getName()+ " : "+ tempUserRole);
-				List<RolePrivilege> rolePrivilegeList= studentDAO.getRolePrivilege(tempUserRole.getRole_id());
+				List<RolePrivilege> rolePrivilegeList= studentService.getRolePrivilege(tempUserRole.getRole_id());
 				for (RolePrivilege tempRolePrivilege : rolePrivilegeList) {
-					//System.out.println(tempRolePrivilege.getPrivilege_id() + " : "+ tempRolePrivilege+ studentDAO.getPrivilege(tempRolePrivilege.getPrivilege_id()));
+					//System.out.println(tempRolePrivilege.getPrivilege_id() + " : "+ tempRolePrivilege+ studentService.getPrivilege(tempRolePrivilege.getPrivilege_id()));
 					System.out.println(tempRolePrivilege.getPrivilege_id() + " : "+ tempRolePrivilege);
 				}
 				
@@ -83,7 +87,7 @@ public class StudentController{
 	public String saveStudent(final ModelMap model,
             @ModelAttribute("student") @Validated(Creation.class) final Student student,
             final BindingResult bindingResult,
-            final HttpServletResponse response) {
+            final HttpServletResponse response,RedirectAttributes attributes) {
 //		Student student=new Student();
 //		student.setId(14);
 //		student.setName("Joseph");
@@ -100,12 +104,15 @@ public class StudentController{
 		            path = "student/add-student";
 
 		            // Marks the response as a bad request
+					attributes.addFlashAttribute("error", "New Student Record could not be saved");
 		            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 		        } else {
 		        	//insert a new record
 					System.out.println(student);
 					 LOGGER.info("Student is : "+student);
-					studentDAO.saveStudent(student);
+					studentService.saveStudent(student);
+					attributes.addFlashAttribute("success", "New Student ["+student.getName()+"] Added successfully");
+
 					path= "redirect:/showStudent";
 		        }
 			
@@ -123,7 +130,8 @@ public class StudentController{
 		    		//update an existing record
 					System.out.println(student);
 					 LOGGER.info("Student is : "+student);
-					studentDAO.update(student);
+					studentService.update(student);
+					attributes.addFlashAttribute("success", "Student ["+student.getName()+"] Updated successfully");
 					path= "redirect:/showStudent";
 		        }
 	
@@ -165,7 +173,7 @@ public class StudentController{
 	public String updateStudent(@RequestParam("userId") int id,Model model) {
 		//we should give a user object of who clicked on the update button
 		System.out.println("Looking for the data of student having id : "+id);
-		Student theStudent = studentDAO.getStudent(id);
+		Student theStudent = studentService.getStudent(id);
 		model.addAttribute("student", theStudent);
 		return "student/add-student";
 
@@ -175,24 +183,26 @@ public class StudentController{
 	public String updateUser(@RequestParam("userId") int id,Model model) {
 		//we should give a user object of who clicked on the update button
 		System.out.println("Looking for the data of user having id : "+id);
-		User theUser = studentDAO.getUser(id);
+		User theUser = studentService.getUser(id);
 		model.addAttribute("user", theUser);
 		return "user/add-user";
 
 	}
 	@GetMapping("/deleteStudent")
-	public String deleteStudent(@RequestParam("userId") int id) {
+	public String deleteStudent(@RequestParam("userId") int id,RedirectAttributes attributes) {
 		//capture the id of the student whom you are trying to delete
 		//once captured the id do a service call to dlete the student
-		studentDAO.deleteStudent(id);
+		studentService.deleteStudent(id);
+		attributes.addFlashAttribute("success", "Student Record Deleted successfully");
 		return "redirect:/showStudent";
 
 	}
 	@GetMapping("/deleteUser")
-	public String deleteUser(@RequestParam("userId") int id) {
+	public String deleteUser(@RequestParam("userId") int id,RedirectAttributes attributes) {
 		//capture the id of the student whom you are trying to delete
 		//once captured the id do a service call to delete the user
-		studentDAO.deleteUser(id);
+		studentService.deleteUser(id);
+		attributes.addFlashAttribute("success", "User  Deleted successfully");
 		return "redirect:/users";
 
 	}
@@ -200,7 +210,7 @@ public class StudentController{
 	public String registerUser(final ModelMap model,
             @ModelAttribute("user") @Validated(Creation.class) final User user,
             final BindingResult bindingResult,
-            final HttpServletResponse response) {
+            final HttpServletResponse response,RedirectAttributes attributes) {
 //		Student student=new Student();
 //		student.setId(14);
 //		student.setName("Joseph");
@@ -240,9 +250,23 @@ public class StudentController{
 				user.setEnabled(true);
 				user.setLocked(false);
 				user.setExpired(false);
-				studentDAO.saveUser(user);
+				studentService.saveUser(user);
 //				path= "redirect:/showUser";
-				path= "redirect:/users";
+				Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+				if (!(authentication instanceof AnonymousAuthenticationToken)) {
+				   // String currentUserName = authentication.getName();
+				   // return currentUserName;
+					attributes.addFlashAttribute("success", "New User ["+user.getName()+"] added Successfully");
+					path= "redirect:/users";
+					
+				}
+				else {
+					attributes.addFlashAttribute("success", "Registration was Successfull : Username is ["+ user.getName()+"]");
+					path= "redirect:/login";
+
+					
+				}
+				
 	        }
 		
 		 
@@ -260,7 +284,12 @@ public class StudentController{
  	        	//update an existing record
 				System.out.println(user);
 				 LOGGER.info("User is : "+user);
-				studentDAO.updateUser(user);
+				//default some field because its self registration
+					user.setEnabled(true);
+					user.setLocked(false);
+					user.setExpired(false);
+				 attributes.addFlashAttribute("success", "User ["+user.getName()+"] Updated successfully");
+				studentService.updateUser(user);
 				path= "redirect:/users";
  	        }
         	 

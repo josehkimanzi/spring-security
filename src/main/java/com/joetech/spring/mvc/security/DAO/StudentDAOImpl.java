@@ -103,7 +103,7 @@ public class StudentDAOImpl implements StudentDAO {
 		String sql="SELECT * FROM STUDENTS";
 		LOGGER.info("We are inside StudentDAOImpl past select query");
 		List<Student> theListOfStudents=jdbcTemplate.query(sql, new StudentRowMapper());
-		LOGGER.info("We are about to return theListOfStudents");
+		LOGGER.info("We are about to return theListOfStudents: "+theListOfStudents.size());
 		return theListOfStudents;
 	}
 	@Override
@@ -116,7 +116,7 @@ public class StudentDAOImpl implements StudentDAO {
 		String sql="SELECT * FROM USERS";
 		LOGGER.info("We are inside StudentDAOImpl past select query");
 		List<User> theListOfUsers=jdbcTemplate.query(sql, new UserRowMapper());
-		LOGGER.info("We are about to return theListOfUsers");
+		LOGGER.info("We are about to return theListOfUsers: "+theListOfUsers.size());
 		return theListOfUsers;
 	}
 	@Override

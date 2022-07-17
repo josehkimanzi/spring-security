@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+<link  rel="stylesheet"  type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -19,20 +23,32 @@
 <!--  <h1 align="center"> Joe Technologies</h1>-->
 <!--ModelAttribute : students-->
 <div class="container">
+<!--<div th:include="fragments/transaction-response :: div" />-->
+ <div class="alert alert-danger" role="alert" th:if="${error}">
+ <button type="button" class="close" data-dismiss="alert">×</button>
+  	<center><span th:remove="tag" th:text="${error}">Error message</span></p></center>
+   </div>
+  <div class="alert alert-success" role="alert" th:if="${success}">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  	<center><span th:remove="tag" th:text="${success}">Success message</span></p></center>
+   </div>
      <form action="/showAddStudentPage">
 <input class="btn btn-info" value="ADD" type="submit">
 </form>
 
-<table class="table table-striped">
+<table id="dataTable"  data-toggle="table"  data-search="true"  class="table  table-striped table-bordered ">
+<thead>
 <tr>
-<th>Id</th>
-<th>Name</th>
+<th data-sortable="true">Id</th>
+<th  data-sortable="true">Name</th>
 <th>Mobile</th>
 <th>Id No</th>
 <th>Country</th>
 <th>Action</th>
 
 </tr>
+</thead>
+<tbody>
 <tr th:each="student : ${students}">
 <td><span th:remove="tag" th:text="${student?.id}"></span></td>
 <td><span th:remove="tag" th:text="${student?.name}"></span></td>
@@ -44,6 +60,7 @@
 <a th:href="@{deleteStudent?userId=} + ${student?.id}" onclick="return confirm('Are you sure you want to delete this student?');"><i class="fa fa-trash-o" aria-hidden="true"  style="color:red"></i></a>
 </td>
 </tr>
+</tbody>
 
 
 
@@ -55,8 +72,10 @@
   <img alt="fake students photo" width="200px" height="200px" th:src="@{/static/images/student.jpg}">
     <img alt="fake students photo" width="200px" height="200px" th:src="@{/static/images/student.jpg}">
     </div>
+    <script>$(document).ready(function () {
+        $('#dataTable').DataTable();
+    });</script>
   
-
 <footer>
 		<div th:include="fragments/scripts :: general" />
 	</footer>

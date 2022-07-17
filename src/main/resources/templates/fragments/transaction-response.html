@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+<!-- jQuery library -->
+<!--  Load local css-->
+<link rel="stylesheet" type="text/css" href="/student-management/URLToReachResourcesFolder/css/my-style-sheet.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="alert alert-danger" role="alert" th:if="${error}">
+<button type="button" class="close" data-dismiss="alert">×</button>
+  	<center><span th:remove="tag" th:text="${error}">Error message</span></p></center>
+   </div>
+  <div class="alert alert-success" role="alert" th:if="${success}">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  	<center><span th:remove="tag" th:text="${success}">Success message</span></p></center>
+   </div>
+   
+   </body>
+   </html>

@@ -8,7 +8,8 @@
 
 	<section id="main-section" class="container-fluid">
 		<header class="page-header">
-			<h1>Register</h1>
+			<h1  sec:authorize="isAuthenticated()">Add New Custom User</h1>
+			<h1  sec:authorize="!isAuthenticated()">Register</h1>
 		</header>
 		<section id="form" class="form-well">
 			<form action="#" th:action="@{/users/registeruser}" th:object="${user}"
@@ -93,7 +94,7 @@
 						</div>
 					</div>
 				</div>
-				<div id="submit" class="row">
+				<div id="submit" class="row" style="margin-left:5%">
 					<div class="col-md-12">
 						<button type="submit">Submit</button>
 					</div>

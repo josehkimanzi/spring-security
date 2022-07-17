@@ -3,4 +3,11 @@
    <script th:src="@{/static/jquery/jquery.min.js}"></script>
    <script th:src="@{/static/bootstrap/js/bootstrap.min.js}"></script>
    <script th:src="@{/static/js/initialize.js}"></script>
+   <script type="text/javascript">
+	window.setTimeout(function(){
+	$(".alert").fadeTo(500,0).slideUp(500, function(){
+		$(this).remove();
+	});
+},5000);
+</script>
 </div>
