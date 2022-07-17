@@ -16,8 +16,9 @@ public interface StudentService {
 	List<Student> loadStudents();
 	@PreAuthorize("hasAuthority('CREATE_STUDENT')")
 	void saveStudent(Student student);
-//	@PreAuthorize("hasAuthority('CREATE_USER')")
+	@PreAuthorize("hasAuthority('CREATE_USER')")
 	void saveUser(User user);
+	void saveUserSelf(User user);
 	@PreAuthorize("hasAuthority('READ_STUDENT')")
 	Student getStudent(int id);
 	@PreAuthorize("hasAuthority('READ_USER')")

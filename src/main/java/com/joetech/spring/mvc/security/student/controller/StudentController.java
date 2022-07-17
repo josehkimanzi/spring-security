@@ -250,17 +250,19 @@ public class StudentController{
 				user.setEnabled(true);
 				user.setLocked(false);
 				user.setExpired(false);
-				studentService.saveUser(user);
+				
 //				path= "redirect:/showUser";
 				Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 				if (!(authentication instanceof AnonymousAuthenticationToken)) {
 				   // String currentUserName = authentication.getName();
 				   // return currentUserName;
+					studentService.saveUser(user);
 					attributes.addFlashAttribute("success", "New User ["+user.getName()+"] added Successfully");
 					path= "redirect:/users";
 					
 				}
 				else {
+					studentService.saveUserSelf(user);
 					attributes.addFlashAttribute("success", "Registration was Successfull : Username is ["+ user.getName()+"]");
 					path= "redirect:/login";
 

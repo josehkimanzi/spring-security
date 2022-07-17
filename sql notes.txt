@@ -1,0 +1,73 @@
+
+-- ****************************************
+-- This SQL script populates the initial data.
+-- ****************************************
+
+INSERT INTO seleniumexpress.USERS (name, password, enabled, locked, expired, CREDENTIALS_EXPIRED) VALUES
+   ('superadmin',      '$2a$04$gV.k/KKIqr3oPySzs..bx.8absYRTpNe8AbHmPP90.ErW0ICGOsVW',   true,    false,   false,   false),
+   ('admin',      '$2a$04$gV.k/KKIqr3oPySzs..bx.8absYRTpNe8AbHmPP90.ErW0ICGOsVW',   true,    false,   false,   false),
+   ('user',      '$2a$04$gV.k/KKIqr3oPySzs..bx.8absYRTpNe8AbHmPP90.ErW0ICGOsVW',   true,    false,   false,   false),
+   ('noroles',    '$2a$04$JXVnGr9TtIqum.vvpe/qsOyjsy2hkEVBZJEAv4NV7eQJisE4xH68a',   true,    false,   false,   false),
+   ('locked',     '$2a$04$JXVnGr9TtIqum.vvpe/qsOyjsy2hkEVBZJEAv4NV7eQJisE4xH68a',   true,    true,    false,   false),
+   ('expired',    '$2a$04$JXVnGr9TtIqum.vvpe/qsOyjsy2hkEVBZJEAv4NV7eQJisE4xH68a',   true,    false,   true,    false),
+   ('disabled',   '$2a$04$JXVnGr9TtIqum.vvpe/qsOyjsy2hkEVBZJEAv4NV7eQJisE4xH68a',   false,   false,   false,   false),
+   ('expCreds',   '$2a$04$JXVnGr9TtIqum.vvpe/qsOyjsy2hkEVBZJEAv4NV7eQJisE4xH68a',   true,    false,   false,   true);
+
+INSERT INTO seleniumexpress.ROLES (name) VALUES
+('SUPERADMIN'),
+   ('ADMIN'),
+   ('USER');
+
+INSERT INTO seleniumexpress.PRIVILEGES (name) VALUES
+    ('CREATE_USER'),
+   ('READ_USER'),
+   ('UPDATE_USER'),
+   ('DELETE_USER'),
+   ('CREATE_STUDENT'),
+   ('READ_STUDENT'),
+   ('UPDATE_STUDENT'),
+   ('DELETE_STUDENT');
+   
+
+INSERT INTO seleniumexpress.ROLE_PRIVILEGES (role_id, privilege_id) VALUES
+  (1, 1),
+   (1, 2),
+   (1, 3),
+   (1, 4),
+   (1, 5),
+   (1, 6),
+   (1, 7),
+   (1, 8),
+   (2, 5),
+   (2, 6),
+   (2, 7),
+   (2, 8),
+   (3, 2),
+   (3, 6);
+
+INSERT INTO seleniumexpress.USER_ROLES (user_id, role_id) VALUES
+   (1, 1),
+   (2, 2),
+   (3, 3),
+   (5, 2),
+   (6, 3),
+   (7, 3);
+
+TRUNCATE table seleniumexpress.USER_ROLES;
+ALTER TABLE seleniumexpress.USER_ROLES AUTO_INCREMENT=0;
+
+
+TRUNCATE table seleniumexpress.ROLE_PRIVILEGES;
+ALTER TABLE seleniumexpress.ROLE_PRIVILEGES AUTO_INCREMENT=0;
+
+
+
+DELETE FROM seleniumexpress.PRIVILEGES WHERE ID>0;
+ALTER TABLE seleniumexpress.PRIVILEGES AUTO_INCREMENT=0;
+
+DELETE FROM seleniumexpress.ROLES WHERE ID>0;
+ALTER TABLE seleniumexpress.ROLES AUTO_INCREMENT=0;
+
+
+DELETE FROM seleniumexpress.USERS WHERE ID>0;
+ALTER TABLE seleniumexpress.USERS AUTO_INCREMENT=0;

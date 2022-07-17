@@ -34,6 +34,11 @@ private StudentDAO studentDAO;
 		studentDAO.saveUser(user);
 
 	}
+	@Override
+	public void saveUserSelf(User user) {
+		studentDAO.saveUser(user);
+
+	}
 
 	@Override
 	public Student getStudent(int id) {
