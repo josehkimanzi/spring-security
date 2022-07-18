@@ -1,0 +1,300 @@
+2022-07-18 08:38:50.028  INFO 4408 --- [restartedMain] .j.s.m.s.SpringMvcSecurityKimApplication : Starting SpringMvcSecurityKimApplication using Java 1.8.0_301 on LTIT42879 with PID 4408 (C:\Users\Joseph.Kimanzi\workspace-spring-tool-suite-4-4.15.1.RELEASE\spring-mvc-security-kim\target\classes started by Joseph.Kimanzi in C:\Users\Joseph.Kimanzi\workspace-spring-tool-suite-4-4.15.1.RELEASE\spring-mvc-security-kim)
+2022-07-18 08:38:50.029  INFO 4408 --- [restartedMain] .j.s.m.s.SpringMvcSecurityKimApplication : No active profile set, falling back to 1 default profile: "default"
+2022-07-18 08:38:50.075  INFO 4408 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-18 08:38:50.082  INFO 4408 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-18 08:38:50.813  INFO 4408 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-07-18 08:38:50.920  INFO 4408 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 98 ms. Found 3 JPA repository interfaces.
+2022-07-18 08:38:52.001  INFO 4408 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-18 08:38:52.014  INFO 4408 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-18 08:38:52.015  INFO 4408 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-18 08:38:52.196  INFO 4408 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-18 08:38:52.198  INFO 4408 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2116 ms
+2022-07-18 08:38:52.396  WARN 4408 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-07-18 08:38:52.431  INFO 4408 --- [restartedMain] c.j.s.m.s.config.StudentAppConfig        : We are inside StudentAppConfig dataSource collecting DB credientials
+2022-07-18 08:38:52.540  INFO 4408 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-07-18 08:38:52.598  INFO 4408 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-07-18 08:38:52.768  INFO 4408 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-07-18 08:38:53.079  INFO 4408 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-07-18 08:38:53.940  INFO 4408 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-07-18 08:38:53.950  INFO 4408 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-07-18 08:38:54.982  INFO 4408 --- [restartedMain] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside dataSource collecting DB credientials
+2022-07-18 08:38:55.507  INFO 4408 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@45f879da, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3857a627, org.springframework.security.web.context.SecurityContextPersistenceFilter@19adb64a, org.springframework.security.web.header.HeaderWriterFilter@7465ac38, org.springframework.security.web.csrf.CsrfFilter@3f348345, org.springframework.security.web.authentication.logout.LogoutFilter@3308a26a, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@44b439f8, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@7d222062, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@ed2ec06, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@d43005c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@40e68c0f, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@44fb67a2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2bbcca89, org.springframework.security.web.session.SessionManagementFilter@77e384f1, org.springframework.security.web.access.ExceptionTranslationFilter@6433d142, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7dc942e4]
+2022-07-18 08:38:55.527  INFO 4408 --- [restartedMain] c.j.s.m.s.config.StudentAppConfig        : We are inside StudentAppConfig jdbcTemplate
+2022-07-18 08:38:56.983  INFO 4408 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-18 08:38:57.048  INFO 4408 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-18 08:38:57.064  INFO 4408 --- [restartedMain] .j.s.m.s.SpringMvcSecurityKimApplication : Started SpringMvcSecurityKimApplication in 7.347 seconds (JVM running for 9.277)
+2022-07-18 08:39:10.952  INFO 4408 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-18 08:39:10.952  INFO 4408 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-18 08:39:10.953  INFO 4408 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-07-18 08:39:11.048  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl about to make a select query
+2022-07-18 08:39:11.048  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl past select query
+2022-07-18 08:39:11.058  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.rowmapper.UserRowMapper        : We are inside UserRowMapper
+2022-07-18 08:39:11.059  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.rowmapper.UserRowMapper        : We are inside UserRowMapper
+2022-07-18 08:39:11.060  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.rowmapper.UserRowMapper        : We are inside UserRowMapper
+2022-07-18 08:39:11.060  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.rowmapper.UserRowMapper        : We are inside UserRowMapper
+2022-07-18 08:39:11.060  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.rowmapper.UserRowMapper        : We are inside UserRowMapper
+2022-07-18 08:39:11.060  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.rowmapper.UserRowMapper        : We are inside UserRowMapper
+2022-07-18 08:39:11.061  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.rowmapper.UserRowMapper        : We are inside UserRowMapper
+2022-07-18 08:39:11.061  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.rowmapper.UserRowMapper        : We are inside UserRowMapper
+2022-07-18 08:39:11.061  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.rowmapper.UserRowMapper        : We are inside UserRowMapper
+2022-07-18 08:39:11.061  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.rowmapper.UserRowMapper        : We are inside UserRowMapper
+2022-07-18 08:39:11.067  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are about to return theListOfUsers: 10
+2022-07-18 08:39:11.067  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl about to make a select query
+2022-07-18 08:39:11.067  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl past select query: SELECT * FROM user_roles INNER JOIN roles ON user_roles.role_id=roles.id where user_id = 1
+2022-07-18 08:39:11.076  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.rowmapper.UserRoleRowMapper    : We are inside UserRoleRowMapper
+2022-07-18 08:39:11.079  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are about to return theListOfUserRoles
+2022-07-18 08:39:11.079  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl about to make a select query
+2022-07-18 08:39:11.079  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl past select query: SELECT rp.role_id, rp.privilege_id, r.name as role_name, p.name as privilege_name FROM role_privileges AS rp INNER JOIN privileges AS p ON rp.privilege_id=seleniumexpress.p.id INNER JOIN seleniumexpress.roles as r ON seleniumexpress.rp.role_id=seleniumexpress.r.id  where role_id = 1
+2022-07-18 08:39:11.086  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.r.RolePrivilegeRowMapper       : We are inside RolePrivilegeRowMapper
+2022-07-18 08:39:11.088  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.r.RolePrivilegeRowMapper       : We are inside RolePrivilegeRowMapper
+2022-07-18 08:39:11.089  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.r.RolePrivilegeRowMapper       : We are inside RolePrivilegeRowMapper
+2022-07-18 08:39:11.089  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.r.RolePrivilegeRowMapper       : We are inside RolePrivilegeRowMapper
+2022-07-18 08:39:11.089  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.r.RolePrivilegeRowMapper       : We are inside RolePrivilegeRowMapper
+2022-07-18 08:39:11.089  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.r.RolePrivilegeRowMapper       : We are inside RolePrivilegeRowMapper
+2022-07-18 08:39:11.089  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.r.RolePrivilegeRowMapper       : We are inside RolePrivilegeRowMapper
+2022-07-18 08:39:11.089  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.r.RolePrivilegeRowMapper       : We are inside RolePrivilegeRowMapper
+2022-07-18 08:39:11.090  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are about to return theListOfRolePrivileges
+2022-07-18 08:39:11.090  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl about to make a select query
+2022-07-18 08:39:11.090  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl past select query: SELECT * FROM user_roles INNER JOIN roles ON user_roles.role_id=roles.id where user_id = 2
+2022-07-18 08:39:11.094  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.rowmapper.UserRoleRowMapper    : We are inside UserRoleRowMapper
+2022-07-18 08:39:11.094  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are about to return theListOfUserRoles
+2022-07-18 08:39:11.094  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl about to make a select query
+2022-07-18 08:39:11.094  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl past select query: SELECT rp.role_id, rp.privilege_id, r.name as role_name, p.name as privilege_name FROM role_privileges AS rp INNER JOIN privileges AS p ON rp.privilege_id=seleniumexpress.p.id INNER JOIN seleniumexpress.roles as r ON seleniumexpress.rp.role_id=seleniumexpress.r.id  where role_id = 2
+2022-07-18 08:39:11.097  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.r.RolePrivilegeRowMapper       : We are inside RolePrivilegeRowMapper
+2022-07-18 08:39:11.097  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.r.RolePrivilegeRowMapper       : We are inside RolePrivilegeRowMapper
+2022-07-18 08:39:11.097  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.r.RolePrivilegeRowMapper       : We are inside RolePrivilegeRowMapper
+2022-07-18 08:39:11.097  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.r.RolePrivilegeRowMapper       : We are inside RolePrivilegeRowMapper
+2022-07-18 08:39:11.098  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are about to return theListOfRolePrivileges
+2022-07-18 08:39:11.098  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl about to make a select query
+2022-07-18 08:39:11.098  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl past select query: SELECT * FROM user_roles INNER JOIN roles ON user_roles.role_id=roles.id where user_id = 3
+2022-07-18 08:39:11.103  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.rowmapper.UserRoleRowMapper    : We are inside UserRoleRowMapper
+2022-07-18 08:39:11.103  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are about to return theListOfUserRoles
+2022-07-18 08:39:11.103  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl about to make a select query
+2022-07-18 08:39:11.103  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl past select query: SELECT rp.role_id, rp.privilege_id, r.name as role_name, p.name as privilege_name FROM role_privileges AS rp INNER JOIN privileges AS p ON rp.privilege_id=seleniumexpress.p.id INNER JOIN seleniumexpress.roles as r ON seleniumexpress.rp.role_id=seleniumexpress.r.id  where role_id = 3
+2022-07-18 08:39:11.106  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.r.RolePrivilegeRowMapper       : We are inside RolePrivilegeRowMapper
+2022-07-18 08:39:11.106  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.r.RolePrivilegeRowMapper       : We are inside RolePrivilegeRowMapper
+2022-07-18 08:39:11.107  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are about to return theListOfRolePrivileges
+2022-07-18 08:39:11.107  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl about to make a select query
+2022-07-18 08:39:11.107  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl past select query: SELECT * FROM user_roles INNER JOIN roles ON user_roles.role_id=roles.id where user_id = 4
+2022-07-18 08:39:11.111  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are about to return theListOfUserRoles
+2022-07-18 08:39:11.111  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl about to make a select query
+2022-07-18 08:39:11.111  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl past select query: SELECT * FROM user_roles INNER JOIN roles ON user_roles.role_id=roles.id where user_id = 5
+2022-07-18 08:39:11.115  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.rowmapper.UserRoleRowMapper    : We are inside UserRoleRowMapper
+2022-07-18 08:39:11.115  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are about to return theListOfUserRoles
+2022-07-18 08:39:11.115  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl about to make a select query
+2022-07-18 08:39:11.115  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl past select query: SELECT rp.role_id, rp.privilege_id, r.name as role_name, p.name as privilege_name FROM role_privileges AS rp INNER JOIN privileges AS p ON rp.privilege_id=seleniumexpress.p.id INNER JOIN seleniumexpress.roles as r ON seleniumexpress.rp.role_id=seleniumexpress.r.id  where role_id = 2
+2022-07-18 08:39:11.119  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.r.RolePrivilegeRowMapper       : We are inside RolePrivilegeRowMapper
+2022-07-18 08:39:11.119  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.r.RolePrivilegeRowMapper       : We are inside RolePrivilegeRowMapper
+2022-07-18 08:39:11.119  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.r.RolePrivilegeRowMapper       : We are inside RolePrivilegeRowMapper
+2022-07-18 08:39:11.119  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.r.RolePrivilegeRowMapper       : We are inside RolePrivilegeRowMapper
+2022-07-18 08:39:11.119  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are about to return theListOfRolePrivileges
+2022-07-18 08:39:11.119  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl about to make a select query
+2022-07-18 08:39:11.120  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl past select query: SELECT * FROM user_roles INNER JOIN roles ON user_roles.role_id=roles.id where user_id = 6
+2022-07-18 08:39:11.123  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.rowmapper.UserRoleRowMapper    : We are inside UserRoleRowMapper
+2022-07-18 08:39:11.123  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are about to return theListOfUserRoles
+2022-07-18 08:39:11.124  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl about to make a select query
+2022-07-18 08:39:11.124  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl past select query: SELECT rp.role_id, rp.privilege_id, r.name as role_name, p.name as privilege_name FROM role_privileges AS rp INNER JOIN privileges AS p ON rp.privilege_id=seleniumexpress.p.id INNER JOIN seleniumexpress.roles as r ON seleniumexpress.rp.role_id=seleniumexpress.r.id  where role_id = 3
+2022-07-18 08:39:11.127  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.r.RolePrivilegeRowMapper       : We are inside RolePrivilegeRowMapper
+2022-07-18 08:39:11.127  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.r.RolePrivilegeRowMapper       : We are inside RolePrivilegeRowMapper
+2022-07-18 08:39:11.128  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are about to return theListOfRolePrivileges
+2022-07-18 08:39:11.128  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl about to make a select query
+2022-07-18 08:39:11.128  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl past select query: SELECT * FROM user_roles INNER JOIN roles ON user_roles.role_id=roles.id where user_id = 7
+2022-07-18 08:39:11.131  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.rowmapper.UserRoleRowMapper    : We are inside UserRoleRowMapper
+2022-07-18 08:39:11.132  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are about to return theListOfUserRoles
+2022-07-18 08:39:11.133  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl about to make a select query
+2022-07-18 08:39:11.133  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl past select query: SELECT rp.role_id, rp.privilege_id, r.name as role_name, p.name as privilege_name FROM role_privileges AS rp INNER JOIN privileges AS p ON rp.privilege_id=seleniumexpress.p.id INNER JOIN seleniumexpress.roles as r ON seleniumexpress.rp.role_id=seleniumexpress.r.id  where role_id = 3
+2022-07-18 08:39:11.137  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.r.RolePrivilegeRowMapper       : We are inside RolePrivilegeRowMapper
+2022-07-18 08:39:11.137  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.m.s.r.RolePrivilegeRowMapper       : We are inside RolePrivilegeRowMapper
+2022-07-18 08:39:11.137  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are about to return theListOfRolePrivileges
+2022-07-18 08:39:11.138  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl about to make a select query
+2022-07-18 08:39:11.138  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl past select query: SELECT * FROM user_roles INNER JOIN roles ON user_roles.role_id=roles.id where user_id = 8
+2022-07-18 08:39:11.142  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are about to return theListOfUserRoles
+2022-07-18 08:39:11.142  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl about to make a select query
+2022-07-18 08:39:11.143  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl past select query: SELECT * FROM user_roles INNER JOIN roles ON user_roles.role_id=roles.id where user_id = 9
+2022-07-18 08:39:11.146  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are about to return theListOfUserRoles
+2022-07-18 08:39:11.146  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl about to make a select query
+2022-07-18 08:39:11.146  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl past select query: SELECT * FROM user_roles INNER JOIN roles ON user_roles.role_id=roles.id where user_id = 10
+2022-07-18 08:39:11.151  INFO 4408 --- [http-nio-8080-exec-1] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are about to return theListOfUserRoles
+2022-07-18 08:39:14.815  INFO 4408 --- [http-nio-8080-exec-6] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl about to make a select query
+2022-07-18 08:39:14.816  INFO 4408 --- [http-nio-8080-exec-6] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside StudentDAOImpl past select query
+2022-07-18 08:39:14.823  INFO 4408 --- [http-nio-8080-exec-6] c.j.s.m.s.rowmapper.StudentRowMapper     : We are inside StudentRowMapper
+2022-07-18 08:39:14.823  INFO 4408 --- [http-nio-8080-exec-6] c.j.s.m.s.rowmapper.StudentRowMapper     : We are inside StudentRowMapper
+2022-07-18 08:39:14.823  INFO 4408 --- [http-nio-8080-exec-6] c.j.s.m.s.rowmapper.StudentRowMapper     : We are inside StudentRowMapper
+2022-07-18 08:39:14.824  INFO 4408 --- [http-nio-8080-exec-6] c.j.s.m.s.rowmapper.StudentRowMapper     : We are inside StudentRowMapper
+2022-07-18 08:39:14.824  INFO 4408 --- [http-nio-8080-exec-6] c.j.s.m.s.rowmapper.StudentRowMapper     : We are inside StudentRowMapper
+2022-07-18 08:39:14.824  INFO 4408 --- [http-nio-8080-exec-6] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are about to return theListOfStudents: 5
+2022-07-18 08:39:39.602  INFO 4408 --- [http-nio-8080-exec-4] c.j.s.m.s.s.s.StudentServiceRefinedImpl  : Making a call to studentRepository to retrieve a student
+2022-07-18 08:39:39.760  INFO 4408 --- [http-nio-8080-exec-4] c.j.s.m.s.s.s.StudentServiceRefinedImpl  : Student details retrieved successfully
+2022-07-18 08:39:41.289  INFO 4408 --- [http-nio-8080-exec-9] c.j.s.m.s.s.s.StudentServiceRefinedImpl  : Making a call to studentRepository to update a student
+2022-07-18 08:39:41.305  INFO 4408 --- [http-nio-8080-exec-9] c.j.s.m.s.s.s.StudentServiceRefinedImpl  : Student Updated Successfully
+2022-07-18 08:39:41.343  INFO 4408 --- [http-nio-8080-exec-3] c.j.s.m.s.s.s.StudentServiceRefinedImpl  : Making a call to studentRepository to retrieve all students
+2022-07-18 08:42:16.516  INFO 4408 --- [http-nio-8080-exec-9] c.j.s.m.s.s.s.StudentServiceRefinedImpl  : Making a call to studentRepository to retrieve all students
+2022-07-18 08:49:13.203  INFO 4408 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-07-18 08:49:15.630  INFO 4408 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-07-18 08:57:43.685  INFO 17600 --- [main] m.s.SpringMvcSecurityKimApplicationTests : Starting SpringMvcSecurityKimApplicationTests using Java 17.0.3 on LTIT42879 with PID 17600 (started by Joseph.Kimanzi in C:\Users\Joseph.Kimanzi\workspace-spring-tool-suite-4-4.15.1.RELEASE\spring-mvc-security-kim)
+2022-07-18 08:57:43.690  INFO 17600 --- [main] m.s.SpringMvcSecurityKimApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2022-07-18 08:57:45.145  INFO 17600 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-07-18 08:57:45.364  INFO 17600 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 202 ms. Found 3 JPA repository interfaces.
+2022-07-18 08:57:46.957  INFO 17600 --- [main] c.j.s.m.s.config.StudentAppConfig        : We are inside StudentAppConfig dataSource collecting DB credientials
+2022-07-18 08:57:47.246  INFO 17600 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-07-18 08:57:47.356  INFO 17600 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-07-18 08:57:47.654  INFO 17600 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-07-18 08:57:48.497  INFO 17600 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-07-18 08:57:49.600  INFO 17600 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-07-18 08:57:49.611  INFO 17600 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-07-18 08:57:49.658  INFO 17600 --- [main] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside dataSource collecting DB credientials
+2022-07-18 08:57:49.923  WARN 17600 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-07-18 08:57:52.621  INFO 17600 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@533a27f8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7dd847a2, org.springframework.security.web.context.SecurityContextPersistenceFilter@46ab8e4b, org.springframework.security.web.header.HeaderWriterFilter@256d8f17, org.springframework.security.web.csrf.CsrfFilter@5ef48b08, org.springframework.security.web.authentication.logout.LogoutFilter@66e62e19, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@c7cbc2d, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@48d14ea0, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4e53c6ef, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7a482b3a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4db45d, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@6c6c93f8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@75b25ec3, org.springframework.security.web.session.SessionManagementFilter@5f3c866c, org.springframework.security.web.access.ExceptionTranslationFilter@73839f22, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7e0b68e5]
+2022-07-18 08:57:52.678  INFO 17600 --- [main] c.j.s.m.s.config.StudentAppConfig        : We are inside StudentAppConfig jdbcTemplate
+2022-07-18 08:57:56.791  INFO 17600 --- [main] m.s.SpringMvcSecurityKimApplicationTests : Started SpringMvcSecurityKimApplicationTests in 13.715 seconds (JVM running for 15.614)
+2022-07-18 08:57:57.209  INFO 17600 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-07-18 09:58:30.960  INFO 2928 --- [restartedMain] .j.s.m.s.SpringMvcSecurityKimApplication : Starting SpringMvcSecurityKimApplication using Java 17.0.3 on LTIT42879 with PID 2928 (C:\Users\Joseph.Kimanzi\workspace-spring-tool-suite-4-4.15.1.RELEASE\spring-mvc-security-kim\target\classes started by Joseph.Kimanzi in C:\Users\Joseph.Kimanzi\workspace-spring-tool-suite-4-4.15.1.RELEASE\spring-mvc-security-kim)
+2022-07-18 09:58:30.963  INFO 2928 --- [restartedMain] .j.s.m.s.SpringMvcSecurityKimApplication : No active profile set, falling back to 1 default profile: "default"
+2022-07-18 09:58:31.024  INFO 2928 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-18 09:58:31.024  INFO 2928 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-18 09:58:42.193  INFO 23144 --- [restartedMain] .j.s.m.s.SpringMvcSecurityKimApplication : Starting SpringMvcSecurityKimApplication using Java 17.0.3 on LTIT42879 with PID 23144 (C:\Users\Joseph.Kimanzi\workspace-spring-tool-suite-4-4.15.1.RELEASE\spring-mvc-security-kim\target\classes started by Joseph.Kimanzi in C:\Users\Joseph.Kimanzi\workspace-spring-tool-suite-4-4.15.1.RELEASE\spring-mvc-security-kim)
+2022-07-18 09:58:42.194  INFO 23144 --- [restartedMain] .j.s.m.s.SpringMvcSecurityKimApplication : No active profile set, falling back to 1 default profile: "default"
+2022-07-18 09:58:42.240  INFO 23144 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-18 09:58:42.240  INFO 23144 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-18 09:58:42.855  INFO 23144 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-07-18 09:58:42.927  INFO 23144 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 3 JPA repository interfaces.
+2022-07-18 09:58:43.591  INFO 23144 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-18 09:58:43.599  INFO 23144 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-18 09:58:43.600  INFO 23144 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-18 09:58:43.752  INFO 23144 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-18 09:58:43.752  INFO 23144 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1512 ms
+2022-07-18 09:58:43.887  WARN 23144 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-07-18 09:58:43.911  INFO 23144 --- [restartedMain] c.j.s.m.s.config.StudentAppConfig        : We are inside StudentAppConfig dataSource collecting DB credientials
+2022-07-18 09:58:43.985  INFO 23144 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-07-18 09:58:44.023  INFO 23144 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-07-18 09:58:44.136  INFO 23144 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-07-18 09:58:44.327  INFO 23144 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-07-18 09:58:44.842  INFO 23144 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-07-18 09:58:44.849  INFO 23144 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-07-18 09:58:45.399  INFO 23144 --- [restartedMain] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside dataSource collecting DB credientials
+2022-07-18 09:58:45.736  INFO 23144 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4c24c451, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6cebf2cf, org.springframework.security.web.context.SecurityContextPersistenceFilter@19ecfd9a, org.springframework.security.web.header.HeaderWriterFilter@5a14c333, org.springframework.security.web.csrf.CsrfFilter@572980f7, org.springframework.security.web.authentication.logout.LogoutFilter@38aa65ca, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@52985172, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@7e5cd08, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6b53bb6e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@563e9d4e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@764bcc0f, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@1c4d183c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@427435cd, org.springframework.security.web.session.SessionManagementFilter@36490ec9, org.springframework.security.web.access.ExceptionTranslationFilter@354179d5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@52306e9c]
+2022-07-18 09:58:45.750  INFO 23144 --- [restartedMain] c.j.s.m.s.config.StudentAppConfig        : We are inside StudentAppConfig jdbcTemplate
+2022-07-18 09:58:47.016  INFO 23144 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-18 09:58:47.050  WARN 23144 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2022-07-18 09:58:47.053  INFO 23144 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-07-18 09:58:47.056  INFO 23144 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-07-18 09:58:47.072  INFO 23144 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-07-18 09:58:47.093 ERROR 23144 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2022-07-18 09:59:15.596  INFO 20904 --- [restartedMain] .j.s.m.s.SpringMvcSecurityKimApplication : Starting SpringMvcSecurityKimApplication using Java 17.0.3 on LTIT42879 with PID 20904 (C:\Users\Joseph.Kimanzi\workspace-spring-tool-suite-4-4.15.1.RELEASE\spring-mvc-security-kim\target\classes started by Joseph.Kimanzi in C:\Users\Joseph.Kimanzi\workspace-spring-tool-suite-4-4.15.1.RELEASE\spring-mvc-security-kim)
+2022-07-18 09:59:15.597  INFO 20904 --- [restartedMain] .j.s.m.s.SpringMvcSecurityKimApplication : No active profile set, falling back to 1 default profile: "default"
+2022-07-18 09:59:15.633  INFO 20904 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-18 09:59:15.634  INFO 20904 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-18 09:59:16.235  INFO 20904 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-07-18 09:59:16.314  INFO 20904 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72 ms. Found 3 JPA repository interfaces.
+2022-07-18 09:59:16.975  INFO 20904 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-18 09:59:16.984  INFO 20904 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-18 09:59:16.985  INFO 20904 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-18 09:59:17.098  INFO 20904 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-18 09:59:17.099  INFO 20904 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1465 ms
+2022-07-18 09:59:17.232  WARN 20904 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-07-18 09:59:17.256  INFO 20904 --- [restartedMain] c.j.s.m.s.config.StudentAppConfig        : We are inside StudentAppConfig dataSource collecting DB credientials
+2022-07-18 09:59:17.332  INFO 20904 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-07-18 09:59:17.369  INFO 20904 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-07-18 09:59:17.488  INFO 20904 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-07-18 09:59:17.679  INFO 20904 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-07-18 09:59:18.216  INFO 20904 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-07-18 09:59:18.223  INFO 20904 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-07-18 09:59:18.784  INFO 20904 --- [restartedMain] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside dataSource collecting DB credientials
+2022-07-18 09:59:19.118  INFO 20904 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@13c4c897, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@50417384, org.springframework.security.web.context.SecurityContextPersistenceFilter@7fae5300, org.springframework.security.web.header.HeaderWriterFilter@22b1cf79, org.springframework.security.web.csrf.CsrfFilter@6249c375, org.springframework.security.web.authentication.logout.LogoutFilter@1d16bc32, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@44ee62de, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@4e05c5d6, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@31721fab, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@68d11c41, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@187dcc43, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@6491485d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5f00e83c, org.springframework.security.web.session.SessionManagementFilter@52d7403a, org.springframework.security.web.access.ExceptionTranslationFilter@38b87610, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@a6defd8]
+2022-07-18 09:59:19.132  INFO 20904 --- [restartedMain] c.j.s.m.s.config.StudentAppConfig        : We are inside StudentAppConfig jdbcTemplate
+2022-07-18 09:59:20.171  INFO 20904 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-18 09:59:20.196  WARN 20904 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2022-07-18 09:59:20.198  INFO 20904 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-07-18 09:59:20.202  INFO 20904 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-07-18 09:59:20.214  INFO 20904 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-07-18 09:59:20.232 ERROR 20904 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2022-07-18 09:59:46.428  INFO 13564 --- [restartedMain] .j.s.m.s.SpringMvcSecurityKimApplication : Starting SpringMvcSecurityKimApplication using Java 17.0.3 on LTIT42879 with PID 13564 (C:\Users\Joseph.Kimanzi\workspace-spring-tool-suite-4-4.15.1.RELEASE\spring-mvc-security-kim\target\classes started by Joseph.Kimanzi in C:\Users\Joseph.Kimanzi\workspace-spring-tool-suite-4-4.15.1.RELEASE\spring-mvc-security-kim)
+2022-07-18 09:59:46.430  INFO 13564 --- [restartedMain] .j.s.m.s.SpringMvcSecurityKimApplication : No active profile set, falling back to 1 default profile: "default"
+2022-07-18 09:59:46.485  INFO 13564 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-18 09:59:46.485  INFO 13564 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-18 09:59:47.268  INFO 13564 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-07-18 09:59:47.351  INFO 13564 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 76 ms. Found 3 JPA repository interfaces.
+2022-07-18 09:59:48.301  INFO 13564 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-18 09:59:48.310  INFO 13564 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-18 09:59:48.310  INFO 13564 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-18 09:59:48.428  INFO 13564 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-18 09:59:48.428  INFO 13564 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1941 ms
+2022-07-18 09:59:48.569  WARN 13564 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-07-18 09:59:48.593  INFO 13564 --- [restartedMain] c.j.s.m.s.config.StudentAppConfig        : We are inside StudentAppConfig dataSource collecting DB credientials
+2022-07-18 09:59:48.665  INFO 13564 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-07-18 09:59:48.700  INFO 13564 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-07-18 09:59:48.815  INFO 13564 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-07-18 09:59:49.009  INFO 13564 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-07-18 09:59:49.559  INFO 13564 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-07-18 09:59:49.566  INFO 13564 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-07-18 09:59:50.177  INFO 13564 --- [restartedMain] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside dataSource collecting DB credientials
+2022-07-18 09:59:50.530  INFO 13564 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2464da3e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@dc2e010, org.springframework.security.web.context.SecurityContextPersistenceFilter@6e5e5df3, org.springframework.security.web.header.HeaderWriterFilter@5a653f7f, org.springframework.security.web.csrf.CsrfFilter@372ba16e, org.springframework.security.web.authentication.logout.LogoutFilter@7e6d5939, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@11cae261, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@69d8fd9, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1d9aa5ee, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7a280f7c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@46edf91c, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@5c1e1710, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1bc8e530, org.springframework.security.web.session.SessionManagementFilter@aa984d8, org.springframework.security.web.access.ExceptionTranslationFilter@1aadc186, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6b4d0719]
+2022-07-18 09:59:50.545  INFO 13564 --- [restartedMain] c.j.s.m.s.config.StudentAppConfig        : We are inside StudentAppConfig jdbcTemplate
+2022-07-18 09:59:51.642  INFO 13564 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-18 09:59:51.697  INFO 13564 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-18 09:59:51.707  INFO 13564 --- [restartedMain] .j.s.m.s.SpringMvcSecurityKimApplication : Started SpringMvcSecurityKimApplication in 5.648 seconds (JVM running for 6.998)
+2022-07-18 10:00:23.853  INFO 13564 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-18 10:00:23.853  INFO 13564 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-18 10:00:23.854  INFO 13564 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-07-18 10:00:27.844  WARN 13564 --- [http-nio-8080-exec-5] o.s.web.servlet.PageNotFound             : No mapping for GET /favicon.ico
+2022-07-18 10:00:32.806  INFO 13564 --- [RMI TCP Connection(9)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-07-18 10:00:32.869  INFO 13564 --- [RMI TCP Connection(9)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-07-18 10:50:21.682  INFO 5916 --- [restartedMain] .j.s.m.s.SpringMvcSecurityKimApplication : Starting SpringMvcSecurityKimApplication using Java 17.0.3 on LTIT42879 with PID 5916 (C:\Users\Joseph.Kimanzi\workspace-spring-tool-suite-4-4.15.1.RELEASE\spring-mvc-security-kim\target\classes started by Joseph.Kimanzi in C:\Users\Joseph.Kimanzi\workspace-spring-tool-suite-4-4.15.1.RELEASE\spring-mvc-security-kim)
+2022-07-18 10:50:21.683  INFO 5916 --- [restartedMain] .j.s.m.s.SpringMvcSecurityKimApplication : No active profile set, falling back to 1 default profile: "default"
+2022-07-18 10:50:21.727  INFO 5916 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-18 10:50:21.728  INFO 5916 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-18 10:50:22.443  INFO 5916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-07-18 10:50:22.521  INFO 5916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72 ms. Found 3 JPA repository interfaces.
+2022-07-18 10:50:23.269  INFO 5916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-18 10:50:23.280  INFO 5916 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-18 10:50:23.280  INFO 5916 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-18 10:50:23.416  INFO 5916 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-18 10:50:23.416  INFO 5916 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1688 ms
+2022-07-18 10:50:23.558  WARN 5916 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-07-18 10:50:23.585  INFO 5916 --- [restartedMain] c.j.s.m.s.config.StudentAppConfig        : We are inside StudentAppConfig dataSource collecting DB credientials
+2022-07-18 10:50:23.661  INFO 5916 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-07-18 10:50:23.699  INFO 5916 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-07-18 10:50:23.815  INFO 5916 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-07-18 10:50:24.022  INFO 5916 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-07-18 10:50:24.544  INFO 5916 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-07-18 10:50:24.550  INFO 5916 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-07-18 10:50:25.107  INFO 5916 --- [restartedMain] c.j.s.mvc.security.DAO.StudentDAOImpl    : We are inside dataSource collecting DB credientials
+2022-07-18 10:50:25.474  INFO 5916 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5ee63909, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6e778e8, org.springframework.security.web.context.SecurityContextPersistenceFilter@43736cf0, org.springframework.security.web.header.HeaderWriterFilter@4da422ff, org.springframework.security.web.csrf.CsrfFilter@340a9e91, org.springframework.security.web.authentication.logout.LogoutFilter@440544eb, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@2d9d58a, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@535dc0f6, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5741e633, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3224ddf3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6369c0b2, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@a4436e9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6468f4b7, org.springframework.security.web.session.SessionManagementFilter@612dc5df, org.springframework.security.web.access.ExceptionTranslationFilter@2f91bf88, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@41a994c5]
+2022-07-18 10:50:25.487  INFO 5916 --- [restartedMain] c.j.s.m.s.config.StudentAppConfig        : We are inside StudentAppConfig jdbcTemplate
+2022-07-18 10:50:26.539  INFO 5916 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-18 10:50:26.586  INFO 5916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-18 10:50:26.595  INFO 5916 --- [restartedMain] .j.s.m.s.SpringMvcSecurityKimApplication : Started SpringMvcSecurityKimApplication in 5.223 seconds (JVM running for 6.04)
+2022-07-18 10:50:40.913  INFO 5916 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-18 10:50:40.914  INFO 5916 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-18 10:50:40.915  INFO 5916 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-07-18 10:50:50.251  INFO 5916 --- [http-nio-8080-exec-7] c.j.s.m.s.s.s.StudentServiceRefinedImpl  : Making a call to studentRepository to retrieve all students
