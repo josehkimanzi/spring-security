@@ -66,6 +66,29 @@ public class StudentServiceRefinedImpl implements StudentServiceRefined {
 
         return student;
     }
+	@Override
+//  @Cacheable("student")
+  public final PersistentStudent getStudentIdno(final String idno) {
+      final Optional<PersistentStudent> read;
+      final PersistentStudent persistentStudent;
+
+      checkNotNull(idno);
+      LOGGER.info("Making a call to studentRepository to retrieve a student with idno: "+idno);
+
+      read = studentRepository.findOneByIdno(idno);
+      LOGGER.info("Student details retrieved successfully");
+
+      if (read.isPresent()) {
+    	  persistentStudent = read.get();
+      } else {
+          // TODO: Throw an exception maybe?
+          LOGGER.warn("Student {} not found", idno);
+          persistentStudent = null;
+      }
+
+      return persistentStudent;
+  }
+	
     @Override
     public final void createStudent(final Student student) {
         final PersistentStudent entity;

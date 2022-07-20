@@ -355,6 +355,7 @@ public class StudentController{
 	            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 	            return path;
 	        } else {
+	        	//studentServiceRefined.getStudentIdno(student.getIdno());
 	        	studentServiceRefined.createStudent(student);
 	        	//StudentDAO.saveUser(form);
 	        	attributes.addFlashAttribute("success", "New User Recorded added Successfully With New Implementation");

@@ -20,6 +20,7 @@ public interface StudentServiceRefined {
 	    public void updateStudent(final Student student);
 	   @PreAuthorize("hasAuthority('DELETE_STUDENT')")
 	    public void deleteStudent(int id);
+	   public PersistentStudent getStudentIdno(final String idno);
 	
 
 }

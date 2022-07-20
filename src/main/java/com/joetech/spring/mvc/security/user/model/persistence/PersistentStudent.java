@@ -6,6 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
+import com.joetech.spring.mvc.security.validation.group.UniqueIdno;
 
 
 /**
@@ -15,7 +18,8 @@ import javax.persistence.Table;
  *
  */
 @Entity(name = "StudentDetails")
-@Table(name = "STUDENTS")
+//@Table(name = "STUDENTS")
+@Table(name = "STUDENTS",uniqueConstraints={@UniqueConstraint(columnNames={"idno"})})
 public class PersistentStudent {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,6 +32,7 @@ public class PersistentStudent {
 	 @Column(name = "country", nullable = false, length = 20)
 	 private String country;
 	 @Column(name = "idno", nullable = false, length = 20)
+	 @UniqueIdno
 	 private String idno;
 	 /**
 	     * Default constructor.

@@ -35,6 +35,7 @@ import com.joetech.spring.mvc.security.student.service.StudentServiceRefinedImpl
 import com.joetech.spring.mvc.security.user.repository.PersistentUserRepository;
 import com.joetech.spring.mvc.security.user.service.DefaultUserService;
 import com.joetech.spring.mvc.security.user.service.UserService;
+import com.joetech.spring.mvc.security.validation.group.UniqueIdnoValidator;
 
 /**
  * Service configuration.
@@ -60,5 +61,11 @@ public class ServiceConfig {
            ) {
         return new StudentServiceRefinedImpl(studentRepo);
     }
+//    @Bean("studentValidator")
+//    public UniqueIdnoValidator getstudentValidator(final PersistentStudentRepository studentRepo
+//           ) {
+//        return new UniqueIdnoValidator(studentRepo);
+//    }
+
 
 }
