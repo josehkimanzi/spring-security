@@ -15,14 +15,21 @@ import com.joetech.spring.mvc.security.student.repository.PersistentStudentRepos
 @Component
 public class UniqueIdnoValidator implements ConstraintValidator<UniqueIdno, String> {
 	private static final Logger LOGGER   = LoggerFactory.getLogger(UniqueIdnoValidator.class);
-	@Autowired
-    PersistentStudentRepository studentRepository;
+	//@Autowired
+	 //private final PersistentStudentRepository studentRepository;
     
 //	public UniqueIdnoValidator(final PersistentStudentRepository studentRepo) {
 //		super();
 //		 studentRepository = checkNotNull(studentRepo,
 //	                "Received a null pointer as students repository");
 //		
+//	}
+
+//	public UniqueIdnoValidator(final PersistentStudentRepository studentRepo) {
+//		super();
+//		 LOGGER.info("Inside UniqueIdnoValidator constructor setting studentRepo ");
+//		 studentRepository = checkNotNull(studentRepo,
+//	                "Received a null pointer as students repository");
 //	}
 
 	@Override

@@ -16,10 +16,14 @@ import com.google.common.collect.Iterables;
 
 public class User {
 	private Integer id;
+	 @Size(min = 3, max = 40, groups = { Creation.class, Update.class })
 	private String email;
-	@NotNull(groups = { Creation.class })
-    @Size(min = 3, max = 20, groups = { Creation.class })
+//	@NotNull(groups = { Creation.class })
+//    @Size(min = 3, max = 20, groups = { Creation.class, Update.class })
 	private String name;
+	@NotNull(groups = { Creation.class, Update.class })
+	@Size(min = 3, max = 20, groups = { Creation.class, Update.class })
+	private String username;
 	@NotNull(groups = { Creation.class, Update.class })
     @Size(min = 3, max = 20, groups = { Creation.class, Update.class })
 	private String password;
@@ -37,7 +41,6 @@ public class User {
 
 	        Iterables.addAll(roles, rls);
 	    }
-	 
 	public Integer getId() {
 		return id;
 	}
@@ -55,6 +58,12 @@ public class User {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	public String getPassword() {
 		return password;
@@ -88,10 +97,11 @@ public class User {
 	}
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", email=" + email + ", name=" + name + ", password=" + password
-				+ ", credentials_expired=" + credentials_expired + ", enabled=" + enabled + ", expired=" + expired
-				+ ", locked=" + locked + "]";
+		return "User [id=" + id + ", email=" + email + ", name=" + name + ", username=" + username + ", password="
+				+ password + ", credentials_expired=" + credentials_expired + ", enabled=" + enabled + ", expired="
+				+ expired + ", locked=" + locked + ", roles=" + roles + "]";
 	}
+	 
 	
 	
 	 

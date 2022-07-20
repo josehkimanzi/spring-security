@@ -61,5 +61,7 @@ public interface PersistentUserRepository
     @Override
     @CacheEvict(cacheNames = { "user", "users", "roles" }, allEntries = true)
     public <S extends PersistentUser> S save(S entity);
+    
+    public Optional<PersistentUser> findOneById(final int id);
 
 }

@@ -194,8 +194,8 @@ public class StudentDAOImpl implements StudentDAO {
 	@Override
 	public void updateUser(User user) {
 		
-		String sql="UPDATE users set name =?, password=?, enabled=?, locked=?, expired=? WHERE id =?";
-		jdbcTemplate.update(sql, user.getName(),user.getPassword() ,user.getEnabled(),user.getLocked(),user.getExpired(),user.getId());
+		String sql="UPDATE users set name =?, email=?, password=?, enabled=?, locked=?, expired=? WHERE id =?";
+		jdbcTemplate.update(sql, user.getName(),user.getEmail(), user.getPassword() ,user.getEnabled(),user.getLocked(),user.getExpired(),user.getId());
 		System.out.println("1 user record updated...");
 		
 		

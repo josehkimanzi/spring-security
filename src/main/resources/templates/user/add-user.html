@@ -8,7 +8,7 @@
 
 	<section id="main-section" class="container-fluid">
 		<header class="page-header">
-			<h1  sec:authorize="isAuthenticated()">Add New Custom User</h1>
+			<h1  sec:authorize="isAuthenticated()">Custom User</h1>
 			<h1  sec:authorize="!isAuthenticated()">Register</h1>
 		</header>
 		<section id="form" class="form-well">
@@ -18,8 +18,8 @@
 					<div class="panel panel-default">
 						<div class="panel-heading">User Data</div>
 						<div class="panel-body">
-							<!-- Username input -->
-							<div class="form-group"
+							<!-- Name input -->
+							<!-- <div class="form-group"
 								th:classappend="${#fields.hasErrors('name')} ? 'error'">
 								<label class="control-label" for="name">Username</label>
 								<div class="controls">
@@ -27,8 +27,33 @@
 									<input type="text" th:field="*{name}" class="form-control"
 										placeholder="Username">
 									<!-- Validation errors -->
-									<p th:if="${#fields.hasErrors('name')}"
+								<!--	<p th:if="${#fields.hasErrors('name')}"
 										class="label label-danger" th:errors="*{name}">Error</p>
+								</div>
+							</div>-->
+							<!-- Username input -->
+							<div class="form-group"
+								th:classappend="${#fields.hasErrors('username')} ? 'error'">
+								<label class="control-label" for="username">Username</label>
+								<div class="controls">
+								<input type="text" th:field="*{id}" class="form-control hidden"placeholder="id">
+									<input type="text" th:field="*{username}" class="form-control"
+										placeholder="Username">
+									<!-- Validation errors -->
+									<p th:if="${#fields.hasErrors('username')}"
+										class="label label-danger" th:errors="*{username}">Error</p>
+								</div>
+							</div>
+							<!-- Email input -->
+							<div class="form-group"
+								th:classappend="${#fields.hasErrors('email')} ? 'error'">
+								<label class="control-label" for="email">Email</label>
+								<div class="controls">
+									<input type="email" th:field="*{email}" class="form-control"
+										placeholder="Email">
+									<!-- Validation errors -->
+									<p th:if="${#fields.hasErrors('email')}"
+										class="label label-danger" th:errors="*{email}">Error</p>
 								</div>
 							</div>
 							<!-- Password input -->
@@ -37,7 +62,7 @@
 								<label class="control-label" for="password">Password</label>
 								<div class="controls">
 									<input type="password" th:field="*{password}"
-										class="form-control">
+										class="form-control" placeholder="Password">
 									<!-- Validation errors -->
 									<p th:if="${#fields.hasErrors('password')}"
 										class="label label-danger" th:errors="*{password}">Error</p>

@@ -5,6 +5,7 @@ import javax.transaction.Transactional;
 import org.springframework.security.access.prepost.PreAuthorize;
 
 import com.joetech.spring.mvc.security.api.Student;
+import com.joetech.spring.mvc.security.api.User;
 import com.joetech.spring.mvc.security.user.model.form.UserForm;
 import com.joetech.spring.mvc.security.user.model.persistence.PersistentStudent;
 

@@ -135,14 +135,14 @@ public final class DefaultUserService implements UserService {
     }
 
     @Override
-    @Cacheable("users")
+   // @Cacheable("users")
     public final Iterable<? extends User> getAllUsers() {
         return userRepository.findAll();
     }
     
 
     @Override
-    @Cacheable("user")
+   // @Cacheable("user")
     public final User getUser(final String username) {
         final Optional<PersistentUser> read;
         final User user;
