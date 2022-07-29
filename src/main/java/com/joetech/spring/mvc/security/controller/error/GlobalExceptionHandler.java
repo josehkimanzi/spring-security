@@ -62,7 +62,17 @@ public final class GlobalExceptionHandler
             final Exception ex) {
         final ModelAndView modelView;
 
-        LOGGER.error(ex.getMessage(), ex);
+       //LOGGER.error(ex.getMessage(), ex);
+        LOGGER.error(ex.getMessage());
+        //LOGGER.error(request.getHeader("Referer"));
+        //String referer =request.getHeader("Referer");
+        
+        
+      /*  modelView = new ModelAndView("student/student-list");
+        modelView.getModel().put("code",
+                HttpStatus.INTERNAL_SERVER_ERROR.value());
+        modelView.getModel().put("error", ex.getMessage());*/
+        
 
         modelView = new ModelAndView(ErrorViews.EXCEPTION);
         modelView.getModel().put("code",

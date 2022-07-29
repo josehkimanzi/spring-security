@@ -207,5 +207,10 @@ public final class DefaultUserService implements UserService {
             LOGGER.warn("User {} not found", userRoles.getUsername());
         }
     }
+    @Override
+    public final void updateRolesCustom(final UserRolesForm userRoles) {
+    	updateRoles(userRoles);
+
+    }
 
 }

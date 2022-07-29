@@ -99,5 +99,16 @@ public interface UserService {
      */
     @PreAuthorize("hasAuthority('UPDATE_USER')")
     public void updateRoles(final UserRolesForm userRoles);
+    
+    /**
+     * Updates the roles for the received user.
+     * 
+     * @param userRoles
+     *            user and roles to update
+     *            
+     *            This is Joe's Custom Implementation
+     */    
+    //@PreAuthorize("hasAuthority('UPDATE_USER')")
+    public void updateRolesCustom(final UserRolesForm userRoles);
 
 }

@@ -1,5 +1,8 @@
 package com.joetech.spring.mvc.security.user.controller;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
+import java.util.Arrays;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
@@ -27,7 +30,9 @@ import com.joetech.spring.mvc.security.api.RolePrivilege;
 import com.joetech.spring.mvc.security.api.User;
 import com.joetech.spring.mvc.security.api.UserRole;
 import com.joetech.spring.mvc.security.student.service.StudentService;
+import com.joetech.spring.mvc.security.user.model.form.DefaultUserRolesForm;
 import com.joetech.spring.mvc.security.user.model.persistence.PersistentUser;
+import com.joetech.spring.mvc.security.user.service.UserService;
 import com.joetech.spring.mvc.security.user.service.UserServiceRefined;
 import com.joetech.spring.mvc.security.validation.group.Creation;
 
@@ -39,6 +44,8 @@ public class UserControllerCustom {
 	private UserServiceRefined userServiceRefined;
 	@Autowired
 	private StudentService studentService;
+	
+	 private final UserService  service;
 	
 	/*@GetMapping("/showUser")
 	public String showUserList(Model model) {
@@ -67,6 +74,14 @@ public class UserControllerCustom {
 		return "user/user-list";
 
 	}*/
+	
+	   @Autowired
+	    public UserControllerCustom(final UserService userService) {
+	        super();
+
+	        service = checkNotNull(userService,
+	                "Received a null pointer as users service");
+	    }
 	
 	
 	
@@ -166,12 +181,21 @@ public class UserControllerCustom {
 				user.setExpired(false);
 				
 //				path= "redirect:/showUser";
+				
+				//List<String> roles = Arrays.asList("USER", "ADMIN");
+				List<String> roles = Arrays.asList("USER");
+				DefaultUserRolesForm form = new DefaultUserRolesForm();
+	        	form.setRoles(roles);
+	        	form.setUsername(user.getUsername());
+	        	
+	        	
 				Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 				if (!(authentication instanceof AnonymousAuthenticationToken)) {
 				   // String currentUserName = authentication.getName();
 				   // return currentUserName;
 					//studentService.saveUser(user);
 					userServiceRefined.createUser(user);
+		        	service.updateRolesCustom(form);
 					attributes.addFlashAttribute("success", "New User ["+user.getUsername()+"] added Successfully");
 					path= "redirect:/users";
 					
@@ -179,6 +203,7 @@ public class UserControllerCustom {
 				else {	
 					//studentService.saveUserSelf(user);
 					userServiceRefined.createUserSelf(user);
+		        	service.updateRolesCustom(form);
 					attributes.addFlashAttribute("success", "Registration was Successfull : Username is ["+ user.getUsername()+"]");
 					path= "redirect:/login";
 
