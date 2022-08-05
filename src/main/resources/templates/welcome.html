@@ -7,6 +7,14 @@
 	<header class="header" th:include="fragments/menu :: menu" />
 
 	<section id="main-section" class="container-fluid">
+	 <div class="alert alert-danger" role="alert" th:if="${error}">
+ <button type="button" class="close" data-dismiss="alert">×</button>
+  	<center><span th:remove="tag" th:text="${error}">Error message</span></p></center>
+   </div>
+  <div class="alert alert-success" role="alert" th:if="${success}">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  	<center><span th:remove="tag" th:text="${success}">Success message</span></p></center>
+   </div>
 		<header class="page-header">
 			<h1>Spring MVC Security Example [JOE]</h1>
 		</header>
